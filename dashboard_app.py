@@ -77,6 +77,20 @@ if st.session_state.theme == 'Dark':
             color: #D1D5DB !important; /* lighter gray for labels */
             font-weight: 600;
         }
+        /* Custom KPI cards for dark theme */
+        .kpi-card {
+            background-color: #1E1E1E !important;
+            color: #FFFFFF !important;
+        }
+        .kpi-value {
+            color: #FFFFFF !important;
+        }
+        .kpi-label {
+            color: #D1D5DB !important;
+        }
+        .kpi-delta {
+            color: #A0AEC0 !important;
+        }
         /* Tables and data editor */
         .stDataFrame { color: #E5E7EB !important; }
         .css-1cpxqw2 { color: #E5E7EB !important; }
@@ -132,127 +146,369 @@ else:
     chart_template = "plotly_white"
     custom_css = """
     <style>
-        /* Light Theme Overrides */
+        /* Light Theme Overrides - Enhanced Visibility */
         .stApp {
-            background-color: #FDFDFE; /* Softer white */
-            color: #0D1B2A; /* Darker text for better contrast */
-    }
-    [data-testid="stSidebar"] {
-        background-color: #ffffff;
-        color: #0D1B2A;
-    }
-    /* Fix sidebar text */
-    [data-testid="stSidebar"] .css-1d391kg. 
-    [data-testid="stSidebar"] .css-1lcbmhc,
-    [data-testid="stSidebar"] .css-17eqqhr,
-    [data-testid="stSidebar"] p,
-    [data-testid="stSidebar"] label{
-        color: #0D1B2A !important;
-    }
-    [data-testid="stSidebar"] span {
-        color: #0D1B2A !important;
-    }
-    /* Fix main text elements */
-    h1, h2, h3, h4, h5, h6 {
-        color: #0D1B2A !important;
-    }
-    p,span,div {
-        color: #0D1B2A !important;
-    }
-
-    /* Fix captions */
-    .stCaption {
-        color: ##b8b2b3 !important; /* Darker gray for better contrast */
-    }
-    /* Fix data editor text */
-    .stDataFrame {
-        color: #0D1B2A !important;
-    }
-    /* Fix expander text */
-    .streamlit-expanderHeader {
-        color: #0D1B2A !important;
-    }
-    /* Fix tabs */
-    .stTabs [data-baseweb="tab-list"] {
-        color: #0D1B2A !important;
-    }
-    .stTabs [data-baseweb="tab"] {
-        color: #495057 !important;
-    }
-    /* Card-like containers for metrics */
-    div[data-testid="metric-container"] {
-        background-color: #FFFFFF;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        border: 1px solid #E9ECEF;
-    }
-    div[data-testid="stMetricValue"] {
-        color: #0A6C3D !important; /* Refined dark green */
-    }
-    div[data-testid="stMetricLabel"] {
-        color: #0D1B2A !important;
-        font-weight: 600;
-    }
-    /* Live Transaction Stream Styling - Light */
-    .live-tx-box {
-        background-color: #FFFFFF;
-        color: #0D1B2A;
-        padding: 16px;
-        border-radius: 10px;
-        margin: 10px 0;
-        border: 1px solid #DEE2E6;
-        font-size: 14px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .fraud-tx {
-        border-left: 5px solid #C53030; /* Softer red */
-        background-color: #FDE2E4; /* Gentle red background */
-    }
-    .legit-tx {
-        border-left: 5px solid #2F855A; /* Softer green */
-        background-color: #E6F4EA; /* Gentle green background */
-    }
-    .tx-id { font-weight: bold; color: #0D1B2A; }
-    .tx-amount { font-family: monospace; font-weight: 600; color: #0D6EFD; }
-    .tx-details { color: #495057; font-size: 0.9em; }
-    .tx-prob-high { color: #C53030; font-weight: bold; }
-    .tx-prob-low { color: #2F855A; font-weight: bold; }
-    /* Section styling */
-    .streamlit-section {
-        background-color: #FFFFFF;
-        padding: 20px;
-        border-radius: 12px;
-        margin: 15px 0;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        border: 1px solid #E9ECEF;
-    }
-    /* Fix button text */
-    .stButton > button {
-        color: #FFFFFF !important;
-        background-color: #cc99de !important; /* Blue buttons */
-    }
-    /* Fix download button */
-    .stDownloadButton > button {
-        color: #FFFFFF !important;
-        background-color: #c7a3d4 !important;
-    }
-    /* Fix data editor */
-    .css-1cpxqw2 {
-        color: #0D1B2A !important;
-    }
-    /* Fix selectbox and slider */
-    .css-1lcbmhc {
-        color: #0D1B2A !important;
-    }
-    .css-17eqqhr {
-        color: #0D1B2A !important;
-    }
-</style>
-"""
+            background-color: #FFFFFF; /* Pure white for better contrast */
+            color: #1A1A1A; /* Very dark text for maximum visibility */
+        }
+        [data-testid="stSidebar"] {
+            background-color: #F8F9FA;
+            color: #1A1A1A;
+        }
+        /* Fix sidebar text - Enhanced visibility */
+        [data-testid="stSidebar"] .css-1d391kg, 
+        [data-testid="stSidebar"] .css-1lcbmhc,
+        [data-testid="stSidebar"] .css-17eqqhr,
+        [data-testid="stSidebar"] p,
+        [data-testid="stSidebar"] label,
+        [data-testid="stSidebar"] span {
+            color: #1A1A1A !important; /* Very dark for maximum visibility */
+        }
+        /* Fix sidebar headers - Enhanced visibility */
+        [data-testid="stSidebar"] h1,
+        [data-testid="stSidebar"] h2,
+        [data-testid="stSidebar"] h3 {
+            color: #0D0D0D !important; /* Even darker for headers */
+        }
+        /* Make sidebar tabs more visible - Enhanced */
+        [data-testid="stSidebar"] .stTabs,
+        [data-testid="stSidebar"] .stTabs [data-baseweb="tab-list"],
+        [data-testid="stSidebar"] .stTabs [data-baseweb="tab"],
+        [data-testid="stSidebar"] .stTabs [data-baseweb="tab"] span {
+            color: #1A1A1A !important; /* Dark for visibility */
+            background-color: #FFFFFF !important;
+            font-weight: 700 !important;
+        }
+        /* Active tab styling - Enhanced */
+        [data-testid="stSidebar"] .stTabs [data-baseweb="tab"][aria-selected="true"] {
+            color: #0D0D0D !important; /* Very dark for active tab */
+            background-color: #E9ECEF !important;
+        }
+        /* Fix main text elements - Enhanced visibility */
+        h1, h2, h3, h4, h5, h6 {
+            color: #0D0D0D !important; /* Very dark for headings */
+        }
+        h1 {
+            font-size: 2.5rem !important;
+            font-weight: 800 !important;
+        }
+        h2 {
+            font-size: 2rem !important;
+            font-weight: 700 !important;
+        }
+        h3 {
+            font-size: 1.75rem !important;
+            font-weight: 700 !important;
+        }
+        h4 {
+            font-size: 1.5rem !important;
+            font-weight: 600 !important;
+        }
+        h5 {
+            font-size: 1.25rem !important;
+            font-weight: 600 !important;
+        }
+        h6 {
+            font-size: 1.1rem !important;
+            font-weight: 600 !important;
+        }
+        p, span, div {
+            color: #1A1A1A !important; /* Dark for all text */
+        }
+        /* Fix captions - Enhanced */
+        .stCaption {
+            color: #495057 !important; /* Darker gray for better contrast */
+            font-weight: 500;
+        }
+        /* Fix data editor text - Enhanced */
+        .stDataFrame {
+            color: #1A1A1A !important;
+        }
+        /* Fix expander text - Enhanced */
+        .streamlit-expanderHeader {
+            color: #1A1A1A !important;
+        }
+        /* Fix Streamlit header tabs - Enhanced visibility */
+        .stTabs [data-baseweb="tab-list"] {
+            color: #1A1A1A !important;
+            background-color: #FFFFFF !important;
+        }
+        .stTabs [data-baseweb="tab"] {
+            color: #343A40 !important; /* Darker for better visibility */
+            font-weight: 600;
+            background-color: #F8F9FA !important;
+        }
+        .stTabs [data-baseweb="tab"][aria-selected="true"] {
+            color: #0D0D0D !important;
+            background-color: #E9ECEF !important;
+        }
+        /* Fix main header navigation */
+        .stApp header {
+            background-color: #FFFFFF !important;
+        }
+        .stApp header a {
+            color: #1A1A1A !important;
+        }
+        /* Card-like containers for metrics - Enhanced */
+        div[data-testid="metric-container"] {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 1px solid #DEE2E6;
+        }
+        div[data-testid="stMetricValue"] {
+            color: #0A6C3D !important; /* Dark green for numbers */
+            font-weight: 700;
+        }
+        div[data-testid="stMetricLabel"] {
+            color: #343A40 !important; /* Darker for labels */
+            font-weight: 600;
+        }
+        /* Custom KPI cards - Enhanced light theme */
+        .kpi-card {
+            background-color: #FFFFFF !important;
+            color: #1A1A1A !important;
+            border: 1px solid #DEE2E6 !important;
+        }
+        .kpi-value {
+            color: #1A1A1A !important;
+        }
+        .kpi-label {
+            color: #495057 !important;
+        }
+        .kpi-delta {
+            color: #6C757D !important;
+        }
+        /* Live Transaction Stream Styling - Enhanced Light */
+        .live-tx-box {
+            background-color: #FFFFFF;
+            color: #1A1A1A;
+            padding: 16px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border: 1px solid #DEE2E6;
+            font-size: 14px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .fraud-tx {
+            border-left: 5px solid #DC3545;
+            background-color: #F8D7DA;
+        }
+        .legit-tx {
+            border-left: 5px solid #28A745;
+            background-color: #D4EDDA;
+        }
+        .tx-id { font-weight: bold; color: #1A1A1A; }
+        .tx-amount { font-family: monospace; font-weight: 600; color: #0056B3; }
+        .tx-details { color: #495057; font-size: 0.9em; }
+        .tx-prob-high { color: #DC3545; font-weight: bold; }
+        .tx-prob-low { color: #28A745; font-weight: bold; }
+        /* Section styling - Enhanced */
+        .streamlit-section {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid #DEE2E6;
+        }
+        /* Fix button text - Enhanced */
+        .stButton > button {
+            color: #FFFFFF !important;
+            background-color: #0056B3 !important; /* Darker blue for better contrast */
+            font-weight: 600;
+        }
+        /* Fix download button - Enhanced */
+        .stDownloadButton > button {
+            color: #FFFFFF !important;
+            background-color: #A0AEC0 !important;
+            font-weight: 600;
+        }
+        /* Fix data editor - Enhanced */
+        .css-1cpxqw2 {
+            color: #1A1A1A !important;
+        }
+        /* Fix selectbox and slider - Enhanced */
+        .css-1lcbmhc {
+            color: #1A1A1A !important;
+        }
+        .css-17eqqhr {
+            color: #1A1A1A !important;
+        }
+        /* Fix filter buttons and interactive elements - Enhanced */
+        .stSelectbox > div > div {
+            color: #1A1A1A !important;
+            background-color: #FFFFFF !important;
+            border: 1px solid #DEE2E6 !important;
+        }
+        .stSelectbox > div > div:hover {
+            background-color: #F8F9FA !important;
+            border-color: #ADB5BD !important;
+        }
+        .stSelectbox option {
+            color: #1A1A1A !important;
+            background-color: #FFFFFF !important;
+        }
+        .stSelectbox svg {
+            fill: #1A1A1A !important;
+        }
+        .stSelectbox[data-testid="stSelectbox"] > div > div {
+            color: #1A1A1A !important;
+            background-color: #FFFFFF !important;
+        }
+        .stSelectbox[data-testid="stSelectbox"] > div > div::after {
+            color: #1A1A1A !important;
+            border-color: #1A1A1A transparent transparent transparent !important;
+        }
+        .stMultiSelect > div > div {
+            color: #1A1A1A !important;
+            background-color: #FFFFFF !important;
+            border: 1px solid #DEE2E6 !important;
+        }
+        .stMultiSelect > div > div:hover {
+            background-color: #F8F9FA !important;
+            border-color: #ADB5BD !important;
+        }
+        .stMultiSelect option {
+            color: #1A1A1A !important;
+            background-color: #FFFFFF !important;
+        }
+        .stMultiSelect svg {
+            fill: #1A1A1A !important;
+        }
+        /* Fix all dropdown arrows */
+        .css-1c7bg2y {
+            color: #1A1A1A !important;
+        }
+        .css-1lcbmhc {
+            color: #1A1A1A !important;
+            background-color: #FFFFFF !important;
+        }
+        .css-17eqqhr {
+            color: #1A1A1A !important;
+            background-color: #FFFFFF !important;
+        }
+        /* Fix dropdown containers */
+        [data-testid="stSelectbox"] {
+            color: #1A1A1A !important;
+        }
+        [data-testid="stMultiSelect"] {
+            color: #1A1A1A !important;
+        }
+        /* Fix dropdown option list - CRITICAL for clicked dropdowns */
+        .stSelectbox ul {
+            background-color: #FFFFFF !important;
+            border: 1px solid #DEE2E6 !important;
+        }
+        .stSelectbox ul li {
+            color: #1A1A1A !important;
+            background-color: #FFFFFF !important;
+        }
+        .stSelectbox ul li:hover {
+            background-color: #F8F9FA !important;
+        }
+        .stSelectbox ul li[aria-selected="true"] {
+            background-color: #E9ECEF !important;
+            color: #0D0D0D !important;
+        }
+        .stMultiSelect ul {
+            background-color: #FFFFFF !important;
+            border: 1px solid #DEE2E6 !important;
+        }
+        .stMultiSelect ul li {
+            color: #1A1A1A !important;
+            background-color: #FFFFFF !important;
+        }
+        .stMultiSelect ul li:hover {
+            background-color: #F8F9FA !important;
+        }
+        .stMultiSelect ul li[aria-selected="true"] {
+            background-color: #E9ECEF !important;
+            color: #0D0D0D !important;
+        }
+        /* Fix baseweb dropdown components */
+        [data-baseweb="select"] {
+            color: #1A1A1A !important;
+        }
+        [data-baseweb="select"] option {
+            color: #1A1A1A !important;
+            background-color: #FFFFFF !important;
+        }
+        [data-baseweb="select"] ul {
+            background-color: #FFFFFF !important;
+            border: 1px solid #DEE2E6 !important;
+        }
+        [data-baseweb="select"] ul li {
+            color: #1A1A1A !important;
+            background-color: #FFFFFF !important;
+        }
+        /* Fix any remaining dropdown elements */
+        div[role="listbox"] {
+            background-color: #FFFFFF !important;
+            border: 1px solid #DEE2E6 !important;
+        }
+        div[role="listbox"] div[role="option"] {
+            color: #1A1A1A !important;
+            background-color: #FFFFFF !important;
+        }
+        div[role="listbox"] div[role="option"]:hover {
+            background-color: #F8F9FA !important;
+        }
+        /* Fix session statistics and JSON display */
+        .stJson {
+            color: #1A1A1A !important;
+            background-color: #F8F9FA !important;
+        }
+        .stJson pre {
+            color: #1A1A1A !important;
+        }
+        /* Fix all input elements */
+        input[type="text"],
+        input[type="number"],
+        select,
+        textarea {
+            color: #1A1A1A !important;
+            background-color: #FFFFFF !important;
+        }
+        /* Fix checkbox labels */
+        .stCheckbox > label {
+            color: #1A1A1A !important;
+        }
+        /* Fix radio button labels */
+        .stRadio > label {
+            color: #1A1A1A !important;
+        }
+        /* Fix slider labels */
+        .stSlider > div[role="slider"] {
+            color: #1A1A1A !important;
+        }
+        /* Fix data display elements */
+        .stMarkdown {
+            color: #1A1A1A !important;
+        }
+        .stCode {
+            color: #1A1A1A !important;
+            background-color: #F8F9FA !important;
+        }
+        /* Fix info/warning/error messages - Enhanced */
+        .stInfo {
+            color: #1A1A1A !important;
+        }
+        .stWarning {
+            color: #856404 !important;
+        }
+        .stError {
+            color: #721C24 !important;
+        }
+        .stSuccess {
+            color: #155724 !important;
+        }
+    </style>
+    """
 st.markdown(custom_css, unsafe_allow_html=True)
 
 # Additional CSS for larger section headings and chart titles
@@ -296,7 +552,9 @@ if 'confirmed_not_fraud_transactions' not in st.session_state:
 # ---------------------------
 st.sidebar.header("⚙️ Dashboard Settings")
 refresh_rate = st.sidebar.slider("Auto-refresh interval (seconds)", 1, 60, 5)
-st_autorefresh(interval=refresh_rate * 1000, key="datarefresh")
+
+# Use st_autorefresh with a key that doesn't interfere with theme
+st_autorefresh(interval=refresh_rate * 1000, key="auto_refresh_key")
 
 # Real-time mode toggle
 realtime_mode = st.sidebar.checkbox("🔴 Real-Time Mode (Fast Updates)", value=True)
@@ -791,7 +1049,7 @@ try:
                 fig_timeline.update_layout(
                     title=dict(
                         text="<b>Transaction Volume Over Time (Last 30 Minutes)</b>",
-                        font=dict(size=18, color="#FFFFFF" if st.session_state.theme == 'Light' else '#FAFAFA')
+                        font=dict(size=18, color="#1A1A1A" if st.session_state.theme == 'Light' else '#FAFAFA')
                     ),
                     xaxis_title="Time",
                     yaxis_title="Count",
@@ -846,7 +1104,7 @@ try:
                         height=350,
                         title=dict(
                             text=fig_amount.layout.title.text,
-                            font=dict(size=16, color="#FEFEFE" if st.session_state.theme == 'Light' else '#FAFAFA')
+                            font=dict(size=16, color="#FFFFFF" if st.session_state.theme == 'Light' else '#FAFAFA')
                         )
                     )
                     st.plotly_chart(fig_amount, use_container_width=True)
@@ -958,7 +1216,7 @@ try:
                         x=hourly_fraud['hour'],
                         y=hourly_fraud['fraud_count'],
                         name='Fraud Count',
-                        marker_color="#ff0019",
+                        marker_color='#dc3545',
                         yaxis='y'
                     ))
                     fig_hourly.add_trace(go.Scatter(
@@ -966,7 +1224,7 @@ try:
                         y=hourly_fraud['fraud_rate'],
                         name='Fraud Rate %',
                         mode='lines+markers',
-                        line=dict(color="#ffbf00", width=3),
+                        line=dict(color='#ffc107', width=3),
                         yaxis='y2'
                     ))
                     fig_hourly.update_layout(
@@ -1267,15 +1525,15 @@ try:
         delta={'reference': 2.0, 'position': "top"},
         gauge={
         'axis': {'range': [0, 10], 'tickwidth': 1, 'tickcolor': "#1C1C1C"},
-        'bar': {'color': "#df2147", 'thickness': 0.3},
+        'bar': {'color': "#dc3545", 'thickness': 0.3},
         'steps': [
             {'range': [0, 1], 'color': "#00ff3c"},
             {'range': [1, 3], 'color': "#ffc400"},
-            {'range': [3, 5], 'color': "#ff7700"},
+            {'range': [3, 5], 'color': "#ff7300"},
             {'range': [5, 10], 'color': "#ff0019"}
         ],
         'threshold': {
-            'line': {'color': "#df2147", 'width': 6},
+            'line': {'color': "#dc3545", 'width': 6},
             'thickness': 0.9,
             'value': fraud_rate_for_gauge
             }
@@ -1285,7 +1543,7 @@ try:
         template=chart_template,
         height=500,
         margin=dict(l=20, r=20, t=60, b=20),
-        font=dict(color="#FFFFFF" if st.session_state.theme == 'Light' else '#FAFAFA', size=14)
+        font=dict(color="#1A1A1A" if st.session_state.theme == 'Light' else '#FAFAFA', size=14)
     )
     st.plotly_chart(fig_gauge, use_container_width=True)
     

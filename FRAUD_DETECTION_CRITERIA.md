@@ -105,6 +105,7 @@ For testing/demo purposes, the simulator marks transactions as fraud based on:
 
 ## Example Scenarios
 
+<<<<<<< HEAD
 ___________________________________________________________________________________________
 | Simulator Flag | ML Model Prob | Final Fraud Prediction | Reason                        |
 |----------------|---------------|------------------------|-------------------------------|
@@ -113,6 +114,14 @@ ________________________________________________________________________________
 | 0 (Legit)      | 0.3           | **0 (Legit)**          | ML model probability < 0.5    |
 | 1 (Fraud)      | 0.8           | **1 (Fraud)**          | Simulator flag + high ML prob |
 |________________|_______________|________________________|_______________________________|
+=======
+| Simulator Flag | ML Model Prob | Final Fraud Prediction | Reason |
+|---------------|---------------|------------------------|--------|
+| 1 (Fraud) | 0.3 | **1 (Fraud)** | Simulator flag takes priority |
+| 0 (Legit) | 0.7 | **1 (Fraud)** | ML model probability > 0.5 |
+| 0 (Legit) | 0.3 | **0 (Legit)** | ML model probability < 0.5 |
+| 1 (Fraud) | 0.8 | **1 (Fraud)** | Simulator flag + high ML prob |
+
 
 ## Adjusting Fraud Detection
 
