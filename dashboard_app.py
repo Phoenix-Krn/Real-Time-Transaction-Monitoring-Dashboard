@@ -1013,13 +1013,13 @@ except:
 # ---------------------------
 try:
     st.markdown("""
-    <div class="section-title-large">📈 Real-Time Transaction Timeline (Last 30 Minutes)</div>
+    <div class="section-title-large">📈 Real-Time Transaction Timeline (Past 7 Days)</div>
     """, unsafe_allow_html=True)
     if not df_rt_filtered.empty and 'processed_time' in df_rt_filtered.columns:
         df_rt_filtered_copy = df_rt_filtered.copy()
-        # Filter to only last 30 minutes
-        thirty_minutes_ago = datetime.now() - pd.Timedelta(minutes=30)
-        df_rt_filtered_copy = df_rt_filtered_copy[df_rt_filtered_copy['processed_time'] >= thirty_minutes_ago]
+        # Filter to only last 7 days
+        seven_days_ago = datetime.now() - pd.Timedelta(days=7)
+        df_rt_filtered_copy = df_rt_filtered_copy[df_rt_filtered_copy['processed_time'] >= seven_days_ago]
         
         if not df_rt_filtered_copy.empty:
             df_rt_filtered_copy['time_bucket'] = df_rt_filtered_copy['processed_time'].dt.floor('1min')
@@ -1048,7 +1048,7 @@ try:
                 ))
                 fig_timeline.update_layout(
                     title=dict(
-                        text="<b>Transaction Volume Over Time (Last 30 Minutes)</b>",
+                        text="<b>Transaction Volume Over Time (Past 7 Days)</b>",
                         font=dict(size=18, color="#1A1A1A" if st.session_state.theme == 'Light' else '#FAFAFA')
                     ),
                     xaxis_title="Time",
@@ -1057,13 +1057,13 @@ try:
                     template=chart_template,
                     height=400,
                     xaxis=dict(
-                        range=[thirty_minutes_ago, datetime.now()],
-                        tickformat='%H:%M'
+                        range=[seven_days_ago, datetime.now()],
+                        tickformat='%m-%d %H:%M'
                     )
                 )
                 st.plotly_chart(fig_timeline, use_container_width=True)
             else:
-                st.info("No transactions in the last 30 minutes.")
+                st.info("No transactions in the past 7 days.")
         else:
             st.info("No transactions in the last 30 minutes.")
 except Exception as e:
