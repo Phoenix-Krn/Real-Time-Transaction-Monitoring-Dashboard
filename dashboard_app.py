@@ -1049,7 +1049,7 @@ try:
                 fig_timeline.update_layout(
                     title=dict(
                         text="<b>Transaction Volume Over Time (Past 7 Days)</b>",
-                        font=dict(size=18, color="#1A1A1A" if st.session_state.theme == 'Light' else '#FAFAFA')
+                        font=dict(size=18, color="#FFFFFF" if st.session_state.theme == 'Light' else '#FAFAFA')
                     ),
                     xaxis_title="Time",
                     yaxis_title="Count",
