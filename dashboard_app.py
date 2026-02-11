@@ -1324,6 +1324,7 @@ try:
                     title=dict(
                         text="<b>Transaction Volume Over Time (Past 7 Days)</b>",
                         font=dict(size=18, color="#FAFAFA" if st.session_state.theme == 'Dark' else '#0D0D0D')
+                        font=dict(size=18, color="#FFFFFF" if st.session_state.theme == 'Light' else '#FAFAFA')
                     ),
                     xaxis_title="Time",
                     yaxis_title="Count",
