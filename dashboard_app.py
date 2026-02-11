@@ -318,8 +318,8 @@ else:
         }
         /* Fix button text - Enhanced */
         .stButton > button {
-            color: #FFFFFF !important;
-            background-color: #0056B3 !important; /* Darker blue for better contrast */
+            color: #0056B3 !important;
+            background-color: #ffffff !important; /* Darker blue for better contrast */
             font-weight: 600;
         }
         /* Fix download button - Enhanced */
@@ -395,9 +395,11 @@ else:
         /* Fix dropdown containers */
         [data-testid="stSelectbox"] {
             color: #1A1A1A !important;
+            background-color: #FFFFFF !important;
         }
         [data-testid="stMultiSelect"] {
             color: #1A1A1A !important;
+            background-color: #FFFFFF !important;
         }
         /* Fix dropdown option list - CRITICAL for clicked dropdowns */
         .stSelectbox ul {
@@ -433,6 +435,7 @@ else:
         /* Fix baseweb dropdown components */
         [data-baseweb="select"] {
             color: #1A1A1A !important;
+            background-color: #FFFFFF !important;
         }
         [data-baseweb="select"] option {
             color: #1A1A1A !important;
@@ -458,41 +461,159 @@ else:
         div[role="listbox"] div[role="option"]:hover {
             background-color: #F8F9FA !important;
         }
-        /* Fix session statistics and JSON display */
-        .stJson {
+        /* Fix dropdown popups and overlays */
+        .stSelectbox div[role="listbox"] {
+            background-color: #FFFFFF !important;
+            border: 1px solid #DEE2E6 !important;
             color: #1A1A1A !important;
-            background-color: #F8F9FA !important;
+        }
+        .stSelectbox div[role="listbox"] div[role="option"] {
+            background-color: #FFFFFF !important;
+            color: #1A1A1A !important;
+        }
+        .stMultiSelect div[role="listbox"] {
+            background-color: #FFFFFF !important;
+            border: 1px solid #DEE2E6 !important;
+            color: #1A1A1A !important;
+        }
+        .stMultiSelect div[role="listbox"] div[role="option"] {
+            background-color: #FFFFFF !important;
+            color: #1A1A1A !important;
+        }
+        /* Fix dropdown menu containers */
+        .css-1c7bg2y {
+            background-color: #FFFFFF !important;
+            color: #1A1A1A !important;
+        }
+        .css-1lcbmhc {
+            background-color: #FFFFFF !important;
+            color: #1A1A1A !important;
+        }
+        .css-17eqqhr {
+            background-color: #FFFFFF !important;
+            color: #1A1A1A !important;
+        }
+        /* Fix dropdown menu items */
+        .css-1c7bg2y div {
+            background-color: #FFFFFF !important;
+            color: #1A1A1A !important;
+        }
+        .css-1lcbmhc div {
+            background-color: #FFFFFF !important;
+            color: #1A1A1A !important;
+        }
+        .css-17eqqhr div {
+            background-color: #FFFFFF !important;
+            color: #1A1A1A !important;
+        }
+        /* Fix session statistics and JSON display - WHITE TEXT */
+        .stJson {
+            color: #FFFFFF !important;
+            background-color: #1A1A1A !important;
         }
         .stJson pre {
-            color: #1A1A1A !important;
+            color: #FFFFFF !important;
         }
-        /* Fix all input elements */
-        input[type="text"],
-        input[type="number"],
-        select,
-        textarea {
+        .stJson code {
+            color: #FFFFFF !important;
+        }
+        .stJson span {
+            color: #FFFFFF !important;
+        }
+        .stJson div {
+            color: #FFFFFF !important;
+        }
+        /* Fix all JSON and code display elements */
+        .stCode {
+            color: #FFFFFF !important;
+            background-color: #1A1A1A !important;
+        }
+        .stCode pre {
+            color: #FFFFFF !important;
+        }
+        .stCode code {
+            color: #FFFFFF !important;
+        }
+        /* Fix filter buttons and interactive elements - TRANSPARENT */
+        .stSelectbox > div > div {
+            color: #1A1A1A !important;
+            background-color: transparent !important;
+            border: 1px solid #DEE2E6 !important;
+        }
+        .stSelectbox > div > div:hover {
+            background-color: rgba(248, 249, 250, 0.8) !important;
+            border-color: #ADB5BD !important;
+        }
+        .stSelectbox option {
             color: #1A1A1A !important;
             background-color: #FFFFFF !important;
         }
-        /* Fix checkbox labels */
-        .stCheckbox > label {
-            color: #1A1A1A !important;
+        .stSelectbox svg {
+            fill: #1A1A1A !important;
         }
-        /* Fix radio button labels */
-        .stRadio > label {
+        .stSelectbox[data-testid="stSelectbox"] > div > div {
             color: #1A1A1A !important;
+            background-color: transparent !important;
         }
-        /* Fix slider labels */
-        .stSlider > div[role="slider"] {
+        .stSelectbox[data-testid="stSelectbox"] > div > div::after {
             color: #1A1A1A !important;
+            border-color: #1A1A1A transparent transparent transparent !important;
         }
-        /* Fix data display elements */
-        .stMarkdown {
+        .stMultiSelect > div > div {
             color: #1A1A1A !important;
+            background-color: transparent !important;
+            border: 1px solid #DEE2E6 !important;
         }
-        .stCode {
+        .stMultiSelect > div > div:hover {
+            background-color: rgba(248, 249, 250, 0.8) !important;
+            border-color: #ADB5BD !important;
+        }
+        .stMultiSelect option {
             color: #1A1A1A !important;
-            background-color: #F8F9FA !important;
+            background-color: #FFFFFF !important;
+        }
+        .stMultiSelect svg {
+            fill: #1A1A1A !important;
+        }
+        /* Fix dropdown containers - TRANSPARENT */
+        [data-testid="stSelectbox"] {
+            color: #1A1A1A !important;
+            background-color: transparent !important;
+        }
+        [data-testid="stMultiSelect"] {
+            color: #1A1A1A !important;
+            background-color: transparent !important;
+        }
+        /* Fix dropdown option list - WHITE TEXT ON DARK */
+        .stSelectbox ul {
+            background-color: #1A1A1A !important;
+            border: 1px solid #DEE2E6 !important;
+        }
+        .stSelectbox ul li {
+            color: #FFFFFF !important;
+            background-color: #1A1A1A !important;
+        }
+        .stSelectbox ul li:hover {
+            background-color: #343A40 !important;
+        }
+        .stSelectbox ul li[aria-selected="true"] {
+            background-color: #495057 !important;
+            color: #FFFFFF !important;
+        }
+        .stMultiSelect ul {
+            background-color: #1A1A1A !important;
+            border: 1px solid #DEE2E6 !important;
+        }
+        .stMultiSelect ul li {
+            color: #FFFFFF !important;
+            background-color: #1A1A1A !important;
+        }
+        .stMultiSelect ul li:hover {
+            background-color: #343A40 !important;
+        }
+        .stMultiSelect ul li[aria-selected="true"] {
+            background-color: #495057 !important;
+            color: #FFFFFF !important;
         }
         /* Fix info/warning/error messages - Enhanced */
         .stInfo {
@@ -506,6 +627,159 @@ else:
         }
         .stSuccess {
             color: #155724 !important;
+        }
+        /* Custom KPI cards - Enhanced light theme */
+        .kpi-card {
+            background-color: #FFFFFF !important;
+            color: #1A1A1A !important;
+        }
+        .kpi-value {
+            color: #1A1A1A !important;
+        }
+        .kpi-label {
+            color: #495057 !important;
+        }
+        .kpi-delta {
+            color: #6C757D !important;
+        }
+        /* Custom section titles and chart titles for light theme */
+        .section-title-large {
+            color: #0D0D0D !important;
+        }
+        .chart-title {
+            color: #0D0D0D !important;
+        }
+        /* Additional dropdown fixes for light theme - Enhanced visibility */
+        .stSelectbox div[role="listbox"],
+        .stSelectbox [data-baseweb="menu"],
+        .stSelectbox ul,
+        .stMultiSelect div[role="listbox"],
+        .stMultiSelect [data-baseweb="menu"],
+        .stMultiSelect ul,
+        [data-baseweb="select"] div[role="listbox"],
+        [data-baseweb="select"] [data-baseweb="menu"],
+        [data-baseweb="select"] ul {
+            background-color: #FFFFFF !important;
+            border: 1px solid #DEE2E6 !important;
+        }
+        .stSelectbox div[role="option"],
+        .stSelectbox li,
+        .stSelectbox [data-baseweb="menu"] li,
+        .stMultiSelect div[role="option"],
+        .stMultiSelect li,
+        .stMultiSelect [data-baseweb="menu"] li,
+        [data-baseweb="select"] div[role="option"],
+        [data-baseweb="select"] li,
+        [data-baseweb="select"] [data-baseweb="menu"] li {
+            color: #ffffff !important;
+            background-color: #FFFFFF !important;
+        }
+        .stSelectbox div[role="option"]:hover,
+        .stSelectbox li:hover,
+        .stSelectbox [data-baseweb="menu"] li:hover,
+        .stMultiSelect div[role="option"]:hover,
+        .stMultiSelect li:hover,
+        .stMultiSelect [data-baseweb="menu"] li:hover,
+        [data-baseweb="select"] div[role="option"]:hover,
+        [data-baseweb="select"] li:hover,
+        [data-baseweb="select"] [data-baseweb="menu"] li:hover {
+            background-color: #F8F9FA !important;
+            color: #000000 !important;
+        }
+        /* Specific rules for dropdown options */
+        div[role="listbox"] div[role="option"],
+        div[role="listbox"] li,
+        ul[role="listbox"] li {
+            color: #000000 !important;
+            background-color: #FFFFFF !important;
+        }
+        div[role="listbox"] div[role="option"]:hover,
+        div[role="listbox"] li:hover,
+        ul[role="listbox"] li:hover {
+            background-color: #343A40 !important;
+            color: #FFFFFF !important;
+        }
+        /* Critical fix for dropdown menu items */
+        .stSelectbox [data-baseweb="popover"] div[role="option"],
+        .stMultiSelect [data-baseweb="popover"] div[role="option"],
+        [data-baseweb="select"] [data-baseweb="popover"] div[role="option"] {
+            color: #FFFFFF !important;
+            background-color: #1A1A1A !important;
+        }
+        .stSelectbox [data-baseweb="popover"] div[role="option"]:hover,
+        .stMultiSelect [data-baseweb="popover"] div[role="option"]:hover,
+        [data-baseweb="select"] [data-baseweb="popover"] div[role="option"]:hover {
+            background-color: #343A40 !important;
+            color: #FFFFFF !important;
+        }
+        /* Fix for all dropdown menu containers */
+        [data-baseweb="popover"] {
+            background-color: #1A1A1A !important;
+            border: 1px solid #DEE2E6 !important;
+        }
+        [data-baseweb="popover"] div[role="option"] {
+            color: #FFFFFF !important;
+            background-color: #1A1A1A !important;
+        }
+        [data-baseweb="popover"] div[role="option"]:hover {
+            background-color: #343A40 !important;
+            color: #FFFFFF !important;
+        }
+        /* Fix dropdown popup menus - WHITE TEXT ON DARK FOR POPUPS */
+        .stSelectbox [data-baseweb="popover"],
+        .stMultiSelect [data-baseweb="popover"],
+        [data-baseweb="select"] [data-baseweb="popover"] {
+            background-color: #1A1A1A !important;
+            border: 1px solid #DEE2E6 !important;
+        }
+        .stSelectbox [data-baseweb="popover"] div[role="option"],
+        .stMultiSelect [data-baseweb="popover"] div[role="option"],
+        [data-baseweb="select"] [data-baseweb="popover"] div[role="option"] {
+            color: #FFFFFF !important;
+            background-color: #1A1A1A !important;
+        }
+        .stSelectbox [data-baseweb="popover"] div[role="option"]:hover,
+        .stMultiSelect [data-baseweb="popover"] div[role="option"]:hover,
+        [data-baseweb="select"] [data-baseweb="popover"] div[role="option"]:hover {
+            background-color: #343A40 !important;
+            color: #FFFFFF !important;
+        }
+        /* Fix all popover content - WHITE TEXT */
+        [data-baseweb="popover"] * {
+            color: #FFFFFF !important;
+        }
+        [data-baseweb="popover"] div {
+            color: #FFFFFF !important;
+            background-color: #1A1A1A !important;
+        }
+        [data-baseweb="popover"] span {
+            color: #FFFFFF !important;
+        }
+        [data-baseweb="popover"] li {
+            color: #FFFFFF !important;
+            background-color: #1A1A1A !important;
+        }
+        [data-baseweb="popover"] ul {
+            background-color: #1A1A1A !important;
+        }
+        /* Fix menu items specifically */
+        [data-baseweb="menu"] {
+            background-color: #1A1A1A !important;
+        }
+        [data-baseweb="menu"] div {
+            color: #FFFFFF !important;
+            background-color: #1A1A1A !important;
+        }
+        [data-baseweb="menu"] li {
+            color: #FFFFFF !important;
+            background-color: #1A1A1A !important;
+        }
+        [data-baseweb="menu"] span {
+            color: #FFFFFF !important;
+        }
+        /* Additional fix for select span elements */
+        div[data-baseweb="select"] span {
+            color: white !important;
         }
     </style>
     """
@@ -1013,13 +1287,13 @@ except:
 # ---------------------------
 try:
     st.markdown("""
-    <div class="section-title-large">📈 Real-Time Transaction Timeline (Last 30 Minutes)</div>
+    <div class="section-title-large">📈 Real-Time Transaction Timeline (Past 7 Days)</div>
     """, unsafe_allow_html=True)
     if not df_rt_filtered.empty and 'processed_time' in df_rt_filtered.columns:
         df_rt_filtered_copy = df_rt_filtered.copy()
-        # Filter to only last 30 minutes
-        thirty_minutes_ago = datetime.now() - pd.Timedelta(minutes=30)
-        df_rt_filtered_copy = df_rt_filtered_copy[df_rt_filtered_copy['processed_time'] >= thirty_minutes_ago]
+        # Filter to only last 7 days
+        seven_days_ago = datetime.now() - pd.Timedelta(days=7)
+        df_rt_filtered_copy = df_rt_filtered_copy[df_rt_filtered_copy['processed_time'] >= seven_days_ago]
         
         if not df_rt_filtered_copy.empty:
             df_rt_filtered_copy['time_bucket'] = df_rt_filtered_copy['processed_time'].dt.floor('1min')
@@ -1048,8 +1322,8 @@ try:
                 ))
                 fig_timeline.update_layout(
                     title=dict(
-                        text="<b>Transaction Volume Over Time (Last 30 Minutes)</b>",
-                        font=dict(size=18, color="#1A1A1A" if st.session_state.theme == 'Light' else '#FAFAFA')
+                        text="<b>Transaction Volume Over Time (Past 7 Days)</b>",
+                        font=dict(size=18, color="#FAFAFA" if st.session_state.theme == 'Dark' else '#0D0D0D')
                     ),
                     xaxis_title="Time",
                     yaxis_title="Count",
@@ -1057,13 +1331,13 @@ try:
                     template=chart_template,
                     height=400,
                     xaxis=dict(
-                        range=[thirty_minutes_ago, datetime.now()],
-                        tickformat='%H:%M'
+                        range=[seven_days_ago, datetime.now()],
+                        tickformat='%m-%d %H:%M'
                     )
                 )
                 st.plotly_chart(fig_timeline, use_container_width=True)
             else:
-                st.info("No transactions in the last 30 minutes.")
+                st.info("No transactions in the past 7 days.")
         else:
             st.info("No transactions in the last 30 minutes.")
 except Exception as e:
@@ -1100,11 +1374,11 @@ try:
                         template=chart_template
                     )
                     fig_amount.update_layout(
-                        showlegend=False, 
+                        showlegend=False,
                         height=350,
                         title=dict(
                             text=fig_amount.layout.title.text,
-                            font=dict(size=16, color="#FFFFFF" if st.session_state.theme == 'Light' else '#FAFAFA')
+                            font=dict(size=16, color="#FAFAFA" if st.session_state.theme == 'Dark' else '#0D0D0D')
                         )
                     )
                     st.plotly_chart(fig_amount, use_container_width=True)
@@ -1145,12 +1419,12 @@ try:
                     )
                     fig_type.update_traces(texttemplate='%{text:.1f}%', textposition='outside')
                     fig_type.update_layout(
-                        showlegend=False, 
-                        height=350, 
+                        showlegend=False,
+                        height=350,
                         xaxis_tickangle=-45,
                         title=dict(
                             text=fig_type.layout.title.text,
-                            font=dict(size=16, color="#FFFFFF" if st.session_state.theme == 'Light' else '#FAFAFA')
+                            font=dict(size=16, color="#FAFAFA" if st.session_state.theme == 'Dark' else '#0D0D0D')
                         )
                     )
                     st.plotly_chart(fig_type, use_container_width=True)
@@ -1179,11 +1453,11 @@ try:
                 fig_risk.add_vline(x=0.75, line_dash="dash", line_color="red", 
                                  annotation_text="Threshold (0.75)", annotation_position="top")
                 fig_risk.update_layout(
-                    showlegend=False, 
+                    showlegend=False,
                     height=350,
                     title=dict(
                         text=fig_risk.layout.title.text,
-                        font=dict(size=16, color="#FFFFFF" if st.session_state.theme == 'Light' else '#FAFAFA')
+                        font=dict(size=16, color="#FAFAFA" if st.session_state.theme == 'Dark' else '#0D0D0D')
                     )
                 )
                 st.plotly_chart(fig_risk, use_container_width=True)
@@ -1230,7 +1504,7 @@ try:
                     fig_hourly.update_layout(
                         title=dict(
                             text="<b>Fraud Activity by Hour of Day</b>",
-                            font=dict(size=16, color="#FFFFFF" if st.session_state.theme == 'Light' else '#FAFAFA')
+                            font=dict(size=16, color="#FAFAFA" if st.session_state.theme == 'Dark' else '#0D0D0D')
                         ),
                         xaxis_title="Hour of Day",
                         yaxis=dict(title="Fraud Count", side="left"),
@@ -1543,7 +1817,7 @@ try:
         template=chart_template,
         height=500,
         margin=dict(l=20, r=20, t=60, b=20),
-        font=dict(color="#1A1A1A" if st.session_state.theme == 'Light' else '#FAFAFA', size=14)
+        font=dict(color="#FFFFFF" if st.session_state.theme == 'Light' else '#FAFAFA', size=14)
     )
     st.plotly_chart(fig_gauge, use_container_width=True)
     
