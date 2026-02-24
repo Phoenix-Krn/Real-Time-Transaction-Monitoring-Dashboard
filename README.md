@@ -107,7 +107,14 @@ Phoenix-Krn/Real-Time-Transaction-Monitoring-Dashboard/
    ```bash
    streamlit run dashboard_app.py
    ```
-
+###IMPORTANT
+**In case you run in loal system run all the below simultaneously**
+'''bash
+ python data_simulator.py
+ python 03_processor_scorer.py 
+ streamlit run dashboard_app.py
+ '''
+ 
 ## 📊 Data Requirements
 
 ### Data Format
